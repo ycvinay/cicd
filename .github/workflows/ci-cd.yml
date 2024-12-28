@@ -6,7 +6,7 @@ on:
   pull_request:
     branches:
       - main
-
+      
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'adoptopenjdk'
+          distribution: 'temurin'
 
       - name: Build Spring Boot app
         run: mvn clean install -DskipTests=true
