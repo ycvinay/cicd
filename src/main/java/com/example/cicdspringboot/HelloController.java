@@ -10,4 +10,9 @@ public class HelloController {
     public String sayHello() {
         return "Hello from Dockerized Spring boot Application";
     }
+
+    @GetMapping("/bye")
+    public String sayBye() {
+        return "Bye to Dockerized Spring Boot Application";
+    }
 }
