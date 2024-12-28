@@ -58,4 +58,4 @@ jobs:
         run: |
           docker stop springboot || true
           docker rm springboot || true
-          docker run -d --name springboot -p 8080:8080 vinay45/cicdspringboot:${{ github.sha }}
+          docker run -d --name springboot -p 8087:8087 vinay45/cicdspringboot:${{ github.sha }}
