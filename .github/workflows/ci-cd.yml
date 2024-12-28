@@ -47,11 +47,13 @@ jobs:
 
       # Step 7: Build Docker Image
       - name: Build Docker image
-        run: docker build -t vinay45/cicdspringboot:${{ github.sha }} .
+        run: docker build -t vinay45/cicdspringboot:${{ github.sha }} -t vinay45/springboot:latest .
 
       # Step 8: Push Docker Image to Docker Hub
       - name: Push Docker image to Docker Hub
-        run: docker push vinay45/cicdspringboot:${{ github.sha }}
+        run: |
+          docker push vinay45/cicdspringboot:${{ github.sha }}
+          docker push vinay45/cicdspringboot:latest
 
       # Step 9: Deploy to a running Docker container (Optional)
       - name: Deploy container (Optional)
